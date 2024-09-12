@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Bienvenido {{nombre}}</ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-item>
+      <ion-button (click)="irperfil()" expand="block"  shape="round">
+        Perfil
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="ircontactos()" expand="block"  shape="round">
+        Contactos
+      </ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>

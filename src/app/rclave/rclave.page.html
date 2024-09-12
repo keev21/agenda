@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Recuperar clave</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input type="text" label="Cedula: " [(ngModel)]="txt_cedula"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Correo: " [(ngModel)]="txt_correo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Nueva clave: " [(ngModel)]="txt_clave" (focusout)="vclave()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Confirmar clave: " [(ngModel)]="txt_cclave" (focusout)="vclave()"></ion-input>
+    <ion-label color="danger">{{mensaje}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="cclave()" expand="block" color="success" shape="round">
+      Cambiar
+    </ion-button>
+    <ion-button (click)="cancelar()" expand="block" color="warning" shape="round">
+      Cancelar
+    </ion-button>
+  </ion-item>
+</ion-content>

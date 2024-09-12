@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input type="text" label="Cedula: " (focusout)="vcedula()" [(ngModel)]="txt_cedula"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Nombre: " [(ngModel)]="txt_nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Apellido: " [(ngModel)]="txt_apellido"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Correo: " [(ngModel)]="txt_correo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Clave: " [(ngModel)]="txt_clave" (focusout)="vclave()"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" label="Confirmar clave: " [(ngModel)]="txt_cclave" (focusout)="vclave()"></ion-input>
+    <ion-label color="danger">{{mensaje}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="registrar()" expand="block" color="success" shape="round">
+      Resgistrarse
+    </ion-button>
+    <ion-button (click)="cancelar()" expand="block" color="warning" shape="round">
+      Cancelar
+    </ion-button>
+  </ion-item>
+
+</ion-content>

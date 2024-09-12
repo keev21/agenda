@@ -1,20 +1,58 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Agenda
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-item>
+      <ion-label class="titulo">Bienvenido</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-img src="assets/imgs/agenda.png" style="display: block; width: 20%; height: auto; margin-left: auto; margin-right: auto;"></ion-img>
+    </ion-item>
+    <ion-item>
+      <ion-label class="etiqueta">Agenda electrónica</ion-label>
+    </ion-item>
+
+    <ion-card color="secondary">
+      <ion-card-header>
+        <ion-card-title class="etiqueta">Inicio de sesión</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="txt_usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Clave</ion-label>
+          <ion-input type="text" [(ngModel)]="txt_clave"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button id="cargando" (click)="loggin()" expand="block"  color="primary" shape="round">
+            Iniciar
+          </ion-button>
+        </ion-item>
+
+        <ion-item>
+          <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="50%">
+                <span class="opciones" (click)="registro()"> Crear cuenta</span>
+              </td>
+              <td width="50%">
+                <span class="opciones" (click)="recuperar()"> Recuperar clave</span>
+              </td>
+            </tr>
+          </table>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
   </div>
+  <ion-loading trigger="cargando" message="Espere porfavor" duration="3000">Cargando</ion-loading>
 </ion-content>

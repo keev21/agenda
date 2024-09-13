@@ -12,13 +12,14 @@
     <ion-input type="text" label="Apellidos: " [(ngModel)]="txt_apellido"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-input type="text" label="Telefono: " [(ngModel)]="txt_telefono"></ion-input>
-    <ion-label color="danger">{{mensaje}}</ion-label>
+    <ion-input type="text" label="Telefono: " [(ngModel)]="txt_telefono" (focusout)="verificartelefonoemail()"></ion-input>
+    
   </ion-item>
   <ion-item>
-    <ion-input type="text" label="Email: " [(ngModel)]="txt_email"></ion-input>
-    <ion-label color="danger">{{mensaje}}</ion-label>
+    <ion-input type="text" label="Email: " [(ngModel)]="txt_email" (focusout)="verificartelefonoemail()"></ion-input>
+   
   </ion-item>
+  <ion-label color="danger">{{mensaje}}</ion-label>
   <ion-item>
     <ion-button (click)="guardar()" expand="block" color="success" shape="round">
       Guardar
